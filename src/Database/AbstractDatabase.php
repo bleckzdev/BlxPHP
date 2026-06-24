@@ -175,6 +175,11 @@ abstract class AbstractDatabase implements DatabaseInterface
     /**
      * {@inheritdoc}
      */
+    abstract public function setSchema(string $schema): void;
+
+    /**
+     * {@inheritdoc}
+     */
     public function getConnection(): \PDO
     {
         return $this->connection;

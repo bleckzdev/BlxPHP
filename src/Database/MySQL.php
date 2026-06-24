@@ -34,4 +34,13 @@ class MySQL extends AbstractDatabase
     {
         return "mysql:host={$this->host};port={$this->port};dbname={$this->database};charset=utf8mb4";
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setSchema(string $schema): void
+    {
+        $this->connection->exec("USE `{$schema}`");
+    }
 }
+

@@ -64,6 +64,15 @@ interface DatabaseInterface
     public function lastInsertId(?string $sequence = null): int;
 
     /**
+     * Cambia el schema/base de datos activo para la conexión.
+     * En PostgreSQL ejecuta SET search_path TO.
+     * En MySQL ejecuta USE.
+     *
+     * @param string $schema Nombre del schema
+     */
+    public function setSchema(string $schema): void;
+
+    /**
      * Retorna la conexión PDO subyacente
      *
      * @return \PDO
