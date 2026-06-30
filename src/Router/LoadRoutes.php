@@ -19,6 +19,7 @@ class LoadRoutes
             return;
 
         $isMatch = true;
+        global $_GET;
         for ($i = 0; $i < count($urlParts); $i++) {
             if (str_contains($routeParts[$i], ':')) {
                 $paramName = "Url_" . str_replace(':', '', $routeParts[$i]);
