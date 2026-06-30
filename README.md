@@ -165,12 +165,12 @@ Route::Patch($path, $controller, $action, $guards);
 Route::Delete($path, $controller, $action, $guards);
 ```
 
-**Parámetros dinámicos** — usa `:` para definir parámetros en la URL. Se acceden vía `$_GET['Url_nombre']` o `Request::get()['Url_nombre']`:
+**Parámetros dinámicos** — usa `:` para definir parámetros en la URL. Se acceden vía `$_GET['url_nombre']` o `Request::get()['url_nombre']`:
 
 ```php
 // Ruta: users/:id/posts/:postId
 // URL:  users/5/posts/12
-// Resultado: $_GET['Url_id'] = '5', $_GET['Url_postId'] = '12'
+// Resultado: $_GET['url_id'] = '5', $_GET['url_postId'] = '12'
 
 Route::Get('users/:id/posts/:postId', PostController::class, 'show');
 ```
